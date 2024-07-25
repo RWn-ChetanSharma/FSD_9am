@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Loop</title>
+</head>
+<body>
+    <script>
+          const myObj = {
+        name: "Janak",
+        studentOf: "Red and White",
+        isLoggedIn: true,
+      };
+
+
+      for (const key in myObj) {
+            const element = myObj[key];
+            console.log(element);
+            console.log(key);
+        }
+    </script>
+</body>
+</html>

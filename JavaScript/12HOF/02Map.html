@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Method</title>
+  </head>
+  <body>
+    <h1>Map Method</h1>
+
+    <script>
+      const radius = [1, 2, 3, 4, 5];
+      console.log(radius);
+      // console.log(radius.calculate(area));    //  ReferenceError: Cannot access 'area' before initialization
+
+      // Area
+
+      const area = function (radius) {
+        return Math.PI * radius * radius;
+      };
+
+      const circumference = function (radius) {
+        return 2 * Math.PI * radius;
+      };
+      const diameter = function (radius) {
+        return 2 * radius;
+      };
+
+       Array.prototype.calculate = (logic) => {
+        // const myFunc = calculate = (radius, logic) => {
+        const result = [];
+        for (let i = 0; i < radius.length; i++) {
+          result.push(logic(radius[i]));
+        }
+        return result;
+      }
+      
+      
+      console.log(radius.map(area)); 
+      console.log(radius.calculate(area));
+      // console.log(calculate(radius, area));
+      // console.log(radius.map(circumference));
+      // console.log(radius.map(diameter));
+
+
+      // Syntax of Map function 
+
+      // arr.map(()=> {
+
+      // })
+      const output = radius.map(element => {
+        return element * 2
+        
+      });
+
+      console.log(output);
+      
+    </script>
+  </body>
+</html>

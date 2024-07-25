@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects In JS</title>
+  </head>
+  <body>
+    <h1>Objects In JS</h1>
+    <p>
+      In JavaScript, an object is a standalone entity, with properties and type.
+      Compare it with a cup, for example. A cup is an object, with properties. A
+      cup has a color, a design, weight, a material it is made of glass, clay,
+      ceramics, etc
+    </p>
+
+    <script>
+      // Objects In JS
+
+      const myObj = {
+        name: "Janak",
+        studentOf: "Red and White",
+        isLoggedIn: true,
+      };
+
+      console.log(myObj);
+      console.log(myObj.name);
+      console.log(myObj.isLoggedIn);
+
+      const obj1 = { 1: "a", 2: "b" };
+      const obj2 = { 3: "c", 4: "d" };
+
+      // Object.assign()
+      // Copies the values of all enumerable own properties from one or more source objects to a target object.
+
+      console.log(obj1);
+      //   const obj3 = Object.assign(obj1, obj2)
+      const obj3 = Object.assign({}, obj1, obj2);
+      console.log(obj1);
+      console.log(obj2);
+      console.log(obj3);
+
+      // Object.create()
+      // Creates a new object with the specified prototype object and properties.
+
+      const obj4 = Object.create(myObj);
+      obj4.name = "shivang";
+      obj4.contact = "123456";
+      console.log(obj4);
+
+      // Object.entries()
+      // Returns an array containing all of the [key, value] pairs of a given object's own enumerable string properties.
+
+      console.log(Object.entries(obj3));
+      console.log(Object.entries(obj3));
+
+      myObj.name = "Rushi";
+      console.log(myObj);
+
+      // Object.freeze()
+      // Freezes an object. Other code cannot delete or change its properties.
+
+      Object.freeze(myObj);
+
+      myObj.name = "YashRaj";
+      console.log(myObj);
+
+      // Object.prototype.hasOwnProperty()
+      // Returns a boolean indicating whether an object contains the specified property
+      // as a direct property of that object and not inherited through the prototype chain
+      console.log(obj3);
+      console.log(obj3.hasOwnProperty(4));
+      console.log(Object.keys(obj3));
+      console.log(Object.values(obj3));
+
+      console.log(myObj.toString());
+      console.log(typeof myObj.toString());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object With Function</title>
+</head>
+<body>
+    <h1>Object With Function</h1>
+
+    <script>
+        // Object With Function
+
+
+        const user = {
+            id: 1,
+            name: "Rohan",
+            email: "rohan@google.com",
+            contact: 1212345678,
+            isLoggedIn: false
+        }
+
+
+        
+        function userClick(user) {
+            console.log(user);
+            console.log(user.id);
+            console.log(user.name);
+            console.log(user.email);
+            console.log(user.contact);
+            console.log(user.isLoggedIn);
+            if (user.isLoggedIn == false) {
+                user.isLoggedIn = true
+            }
+            else{
+                user.isLoggedIn = false
+
+            }
+            console.log(user.isLoggedIn);
+
+
+        }
+
+        userClick(user)
+    </script>
+</body>
+</html>

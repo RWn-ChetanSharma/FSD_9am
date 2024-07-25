@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form Validation</title>
+  </head>
+  <body>
+    <h1>Simple Form Validation</h1>
+
+    <hr />
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      onblur="validateUserName()"
+    />
+    <span id="error1"></span>
+    <br />
+    <br />
+    <input
+      type="password"
+      name="userPass"
+      id="userPass"
+      onblur="validateUserPassword()"
+    />
+    <span id="error2"></span>
+    <br />
+    <br />
+    <input type="email" name="userEmail" id="userEmail" />
+
+    <span id="error3"></span>
+    <br />
+    <br />
+    <input type="tel" name="userMobile" id="userMobile" />
+    <span id="error4"></span>
+    <br />
+    <script>
+      // Simple Form Validation
+
+      function validateUserName() {
+        let userName = document.getElementById("userName");
+        console.log(userName.value);
+        if (userName.value == "") {
+          console.log("User Name is required");
+          document.getElementById("error1").innerText =
+            "User Name is required";
+          document.getElementById("error1").style.color = "red";
+        } else {
+          console.log("Validate");
+          document.getElementById("error1").innerText = "";
+        }
+      }
+
+      function validateUserPassword() {
+        let userPass = document.getElementById("userPass");
+        if (userPass.value == "") {
+          console.log("Password is required");
+          document.getElementById("error2").innerText =
+            "Password is required";
+          document.getElementById("error2").style.color = "red";
+        } else {
+          console.log("Validate");
+          document.getElementById("error2").innerText = "";
+        }
+      }
+    </script>
+  </body>
+</html>

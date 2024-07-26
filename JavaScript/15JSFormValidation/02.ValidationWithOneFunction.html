@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation With One Function</title>
+  </head>
+  <body>
+    <h1>Form Validation With One Function</h1>
+
+    <hr />
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      onblur="ValidateMyForm(this, 'error1', 'User Name')"
+    />
+    <span id="error1"></span>
+    <br />
+    <br />
+    <input
+      type="password"
+      name="userPass"
+      id="userPass"
+      onblur="ValidateMyForm(this, 'error2', 'User Password')"
+    />
+    <span id="error2"></span>
+    <br />
+    <br />
+    <input
+      type="email"
+      name="userEmail"
+      id="userEmail"
+      onblur="ValidateMyForm(this, 'error3', 'User Email')"
+    />
+
+    <span id="error3"></span>
+    <br />
+    <br />
+    <input
+      type="tel"
+      name="userMobile"
+      id="userMobile"
+      onblur="ValidateMyForm(this, 'error4', 'User Mobile')"
+    />
+    <span id="error4"></span>
+    <br />
+    <hr>
+
+
+
+
+
+    <script>
+
+        function ValidateMyForm(a, spnId, msg ) {
+            console.log(a);
+            console.log(a.value);
+            console.log(spnId);
+            console.log(msg);
+        }
+
+
+
+        // rohan.fullstack992@gmail.com
+
+        // [a-zA-Z0-9.*%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegEx Form Validation</title>
+  </head>
+  <body>
+    <h1>RegEx Form Validation</h1>
+    <hr />
+    <hr />
+
+    <!-- ValidateMyForm and focusHere -->
+
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      onfocus="focusHere(this)"
+      onblur="ValidateMyForm(this, 'error1', 'User Name')"
+    />
+    <span id="error1"></span>
+    <br />
+    <br />
+    <input
+      type="password"
+      name="userPass"
+      id="userPass"
+      onfocus="focusHere(this)"
+      onblur="ValidateMyForm(this, 'error2', 'User Password')"
+    />
+    <span id="error2"></span>
+    <br />
+    <br />
+    <input
+      type="email"
+      name="userEmail"
+      id="userEmail"
+      onfocus="focusHere(this)"
+      onblur="ValidateMyForm(this, 'error3', 'User Email')"
+    />
+
+    <span id="error3"></span>
+    <br />
+    <br />
+    <input
+      type="tel"
+      name="userMobile"
+      id="userMobile"
+      onfocus="focusHere(this)"
+      onblur="ValidateMyForm(this, 'error4', 'User Mobile')"
+    />
+    <span id="error4"></span>
+    <br />
+    <hr />
+
+    <!-- changeHere -->
+
+    <select name="course" id="course" onchange="changeHere(this, 'error5')">
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+      <option value="java">Java</option>
+      <option value="ruby">Ruby</option>
+      <option value="golang">Golang</option>
+    </select>
+    <span id="error5"></span>
+    <hr />
+
+    <!-- RegEx Form validation -->
+
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      onkeypress="checkUserName(this, 'error6')"
+    />
+    <span id="error6"></span>
+    <br />
+    <br />
+    <input
+      type="password"
+      name="userPass"
+      id="userPass"
+      onkeypress="checkUserPassword(this, 'error7')"
+    />
+    <span id="error7"></span>
+    <br />
+    <br />
+    <input
+      type="email"
+      name="userEmail"
+      id="userEmail"
+      onkeypress="checkUserEmail(this, 'error8')"
+    />
+
+    <span id="error8"></span>
+    <br />
+    <br />
+    <input
+      type="tel"
+      name="userMobile"
+      id="userMobile"
+      onkeypress="checkUserMobile(this, 'error9')"
+    />
+    <span id="error9"></span>
+    <br />
+    <hr />
+    <hr />
+
+    <script>
+      // ValidateMyForm
+
+      function ValidateMyForm(e, spnId, msg) {
+        if (e.value == "") {
+          document.getElementById(spnId).innerText = msg + " is required";
+          document.getElementById(spnId).style.color = "red";
+        } else {
+          document.getElementById(spnId).innerText = "";
+        }
+      }
+
+      // focusHere
+
+      function focusHere(e) {
+        e.style.background = "khaki";
+      }
+
+      // changeHere
+
+      function changeHere(e, spnId) {
+        e.style.background = "crimson";
+        e.style.color = "white";
+        document.getElementById(spnId).innerText = e.value;
+      }
+
+      // RegEx Form validation
+
+      function checkUserName(e, spnid) {
+        let name = /^[a-zA-Z]+$/;
+        if (name.test(e.value)) {
+          document.getElementById(spnid).innerText = "";
+        } else {
+          document.getElementById(spnid).style.color = "red";
+          document.getElementById(spnid).innerText =
+            "Please Enter only Characters!";
+        }
+      }
+
+      function checkUserPassword(e, spnid) {
+        let pass = /^[a-zA-z0-9._-]{3,5}$/;
+        if (pass.test(e.value)) {
+          document.getElementById(spnid).innerText = "";
+        } else {
+          document.getElementById(spnid).style.color = "red";
+          document.getElementById(spnid).innerText =
+            "Please Enter valid Password!";
+          console.log(e.value);
+        }
+      }
+      function checkUserEmail(e, spnid) {
+        let email = /^([a-z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z]{2,4})+$/;
+        if (email.test(e.value)) {
+          document.getElementById(spnid).innerText = "";
+        } else {
+          document.getElementById(spnid).style.color = "red";
+          document.getElementById(spnid).innerText =
+            "Please Enter Valid Email!";
+          console.log(e.value);
+        }
+      }
+      function checkUserMobile(e, spnid) {
+        let mobile = /^[0-9]{10}$/;
+        if (mobile.test(e.value)) {
+          document.getElementById(spnid).innerText = "";
+        } else {
+          document.getElementById(spnid).style.color = "red";
+          document.getElementById(spnid).innerText =
+            "Please Enter Valid Mobile Number!";
+          console.log(e.value);
+        }
+      }
+    </script>
+  </body>
+</html>

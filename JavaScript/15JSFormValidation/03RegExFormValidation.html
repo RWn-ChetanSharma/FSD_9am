@@ -147,7 +147,7 @@
       }
 
       function checkUserPassword(e, spnid) {
-        let pass = /^[a-zA-z0-9._-]{3,5}$/;
+        let pass = /^[a-zA-z0-9._@-]{3,5}$/;
         if (pass.test(e.value)) {
           document.getElementById(spnid).innerText = "";
         } else {

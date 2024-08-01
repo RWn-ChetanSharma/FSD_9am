@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Element in JS</title>
+
+    <!-- CSS  -->
+    <style>
+      body {
+        background-color: tan;
+      }
+      .hello {
+        color: aliceblue;
+        background-color: crimson;
+        font-size: 30px;
+      }
+      .hey {
+        border: 5px solid lime;
+        background-color: blueviolet;
+        color: aliceblue;
+        font-size: 50px;
+      }
+      button {
+        margin-top: 30px;
+        padding: 10px 30px;
+        background-color: blue;
+        color: aliceblue;
+        border: 1px solid blue;
+        font-size: 30px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="hey" id="unique">Create Element in JS</h1>
+    <div id="heading"></div>
+
+    <button id="btnAdd">Add Class</button>
+    <button id="btnRemove">Remove Class</button>
+    <button id="btnToggle">Toggle Class</button>
+    <button id="btnReplace">Replace Class</button>
+
+    <script>
+      // createElement
+
+      const newElement = document.createElement("p");
+
+      // createTextNode
+
+      const newText = document.createTextNode("Namaste Bharat");
+
+      // appendChild
+
+      newElement.appendChild(newText);
+
+      document.getElementById("heading").appendChild(newElement);
+
+      // className
+
+      let h1 = document.getElementsByTagName("h1");
+
+      // newElement.className = "hello";
+
+      // classList
+
+      // add
+
+      let btnAdd = document.getElementById("btnAdd");
+      btnAdd.addEventListener("click", function () {
+        newElement.classList.add("hello");
+      });
+
+      // remove
+
+      let btnRemove = document.getElementById("btnRemove");
+      btnRemove.addEventListener("click", function () {
+        h1[0].classList.remove("hey");
+      });
+
+      // Toggle
+
+      let btnToggle = document.getElementById("btnToggle");
+      btnToggle.addEventListener("click", function () {
+        h1[0].classList.toggle("hey");
+      });
+
+      // replace
+
+      let btnReplace = document.getElementById("btnReplace");
+      btnReplace.addEventListener("click", function () {
+        h1[0].classList.replace("hey", "hello");
+      });
+
+
+      // outerHTML 
+
+      console.log(h1[0].outerHTML);
+
+      // textContent 
+
+      console.log(h1[0].textContent);
+
+      // innerText 
+
+      console.log(h1[0].innerText);
+
+      // innerHTML 
+
+      console.log(h1[0].innerHTML);
+
+
+
+      // getAttribute 
+
+      console.log(h1[0].getAttribute("class"));
+      console.log(h1[0].getAttribute("id"));
+
+      // setAttribute 
+
+      console.log(h1[0].setAttribute("title", "HTML Heading"));
+    
+      // hasAttribute 
+
+      console.log(h1[0].hasAttribute("janak"));
+    </script>
+  </body>
+</html>

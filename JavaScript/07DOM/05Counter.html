@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <button onclick="handleBack()">Back</button>
+
+    <button onclick="handleNext()">Next</button>
+
+    <script>
+        const arr = ["red", "green", "yellow", "Pink", "Black"]
+      let count = 0;
+      function handleBack() {
+        count = count - 1;
+        console.log(count);
+        console.log(arr[count]);
+        
+      }
+      function handleNext() {
+        count = count + 1;
+        console.log(count);
+        console.log(arr[count]);
+
+      }
+    </script>
+  </body>
+</html>

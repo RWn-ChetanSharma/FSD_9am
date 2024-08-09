@@ -16,17 +16,18 @@
     <h1>Cart</h1>
     <div id="displayData"></div>
     <div class="container border border-5 border-danger-subtle p-4 text-center">
-      <h2>
-        My Name is <span id="spnId1"></span> and My Age is
+      <!-- <p>
+        My  <span id="spnId1"></span> and My Age is
         <span id="spnId2"></span>
-      </h2>
+      </p> -->
+      <div id="spnId1"></div>
 
       <button id="btnGet" class="btn btn-primary">Add</button>
       <button id="btnRemove" class="btn btn-primary">Remove</button>
     </div>
 
     <script>
-      btnGet.addEventListener("click", function () {
+      window.addEventListener("load", function () {
         const data = localStorage.getItem("UserDetail");
         document.getElementById("spnId1").innerText =
           localStorage.getItem("name");
@@ -35,17 +36,30 @@
           const UserDetail = JSON.parse(data);
 
           // Display the data
-          document.getElementById("spnId1").innerText = UserDetail.name;
-          document.getElementById("spnId2").innerText = UserDetail.age;
+          // document.getElementById("spnId1").innerText = UserDetail.name;
+          document.getElementById("spnId1").innerHTML = `<div class="card">
+                                                        <div class="card-header">
+                                                          Quote
+                                                        </div>
+                                                        <div class="card-body">
+                                                          <blockquote class="blockquote mb-0">
+                                                            <p>A well-known quote, contained in a blockquote element.</p>
+                                                            <footer class="blockquote-footer"><cite title="Source Title">${UserDetail.name}</cite></footer>
+                                                          </blockquote>
+                                                        </div>
+                                                      </div>`;
+          // document.getElementById("spnId2").innerHTML = `<i>${UserDetail.age}<i/>`;
         } else {
           console.log("Error");
         }
+
+
       });
 
+      btnRemove.addEventListener("click", function () {
+        localStorage.removeItem("UserDetail");
+      });
 
-      btnRemove.addEventListener("click", function () {          
-          localStorage.removeItem("UserDetail")
-        })
     </script>
   </body>
 </html>

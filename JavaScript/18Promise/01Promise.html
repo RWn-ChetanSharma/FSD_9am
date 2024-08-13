@@ -19,36 +19,13 @@
     </ul>
 
     <script>
-    //   const myPromise = new Promise((haa, naa) => {
-    //     let a = 10;
-    //     let b = 20;
-    //     if (a == b) {
-    //       haa("sahi hai!");
-    //     } else {
-    //       naa("galat hai!");
-    //     }
-    //   })
-    //     .then((res) => {
-    //       console.log(res);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       window.location.href = "error.html"
-    //     });
-
-
-
-    const myPromise = new Promise((res, rej) => {
+      const myPromise = new Promise((haa, naa) => {
         let a = 10;
-        let b = 10;
+        let b = 20;
         if (a == b) {
-          setTimeout(() => {
-            res("sahi hai!");
-          }, 2000);
+          haa("sahi hai!");
         } else {
-          setTimeout(() => {
-            rej("galat hai!");
-          }, 2000);
+          naa("galat hai!");
         }
       })
         .then((res) => {
@@ -56,7 +33,30 @@
         })
         .catch((err) => {
           console.log(err);
+          window.location.href = "error.html"
         });
+
+
+
+    // const myPromise = new Promise((res, rej) => {
+    //     let a = 10;
+    //     let b = 20;
+    //     if (a == b) {
+    //       setTimeout(() => {
+    //         res("sahi hai!");
+    //       }, 2000);
+    //     } else {
+    //       setTimeout(() => {
+    //         rej("galat hai!");
+    //       }, 2000);
+    //     }
+    //   })
+    //     .then((res) => {
+    //       console.log(res);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
     </script>
   </body>
 </html>

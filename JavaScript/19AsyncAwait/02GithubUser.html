@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github User</title>
+
+    <!-- Bootstrap CSS  -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: grey; color: aliceblue;">
+    <h1>Github User</h1>
+
+    <div class="container border border-4 text-bg-dark border-info-subtle p-5">
+      <div class="row g-4">
+        <div class="col"  id="dispdata"></div>
+        <div class="col">
+            <h1>Github API Data</h1>
+            <h2>See &larr;, how we did it in code &darr;</h2>
+            <pre>
+                async function getproducts() {
+                    const apiData = await fetch(
+                      `https://api.github.com/users/codewithharry`
+                    );
+                    const data = await apiData.json();
+                    document.getElementById("dispdata").innerHTML = `
+                                    <div class="card" style="width: 18rem;">
+                                    <img src=${data.avatar_url} class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${data.login}</h5>
+                                        <p class="card-text">Best Youtuber since my childhood</p>
+                                        <a href="#" class="btn btn-primary">Followers : ${data.followers}</a>
+                                    </div>
+                                    </div>
+                    `;
+                  }
+                  getproducts();
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function getUser() {
+        let githubApi = await fetch(
+          `https://api.github.com/users/codewithharry`
+        );
+        let data = await githubApi.json();
+        console.log(data);
+      }
+      getUser();
+
+      async function getproducts() {
+        const apiData = await fetch(
+          `https://api.github.com/users/codewithharry`
+        );
+        const data = await apiData.json();
+        document.getElementById("dispdata").innerHTML = `
+                        <div class="card" style="width: 18rem;">
+                        <img src=${data.avatar_url} class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.login}</h5>
+                            <p class="card-text">Best Youtuber since my childhood</p>
+                            <a href="#" class="btn btn-primary">Followers : ${data.followers}</a>
+                        </div>
+                        </div>
+        `;
+      }
+      getproducts();
+    </script>
+  </body>
+</html>

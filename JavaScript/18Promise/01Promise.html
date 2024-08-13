@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise In JS</title>
+  </head>
+  <body>
+    <h1>Promise In JS</h1>
+    <p>
+      The Promise object represents the eventual completion (or failure) of an
+      asynchronous operation and its resulting value.
+    </p>
+    <h2>A Promise is in one of these states:</h2>
+    <ul>
+      <li>pending: initial state, neither fulfilled nor rejected.</li>
+      <li>fulfilled: meaning that the operation was completed successfully.</li>
+      <li>rejected: meaning that the operation failed.</li>
+    </ul>
+
+    <script>
+    //   const myPromise = new Promise((haa, naa) => {
+    //     let a = 10;
+    //     let b = 20;
+    //     if (a == b) {
+    //       haa("sahi hai!");
+    //     } else {
+    //       naa("galat hai!");
+    //     }
+    //   })
+    //     .then((res) => {
+    //       console.log(res);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       window.location.href = "error.html"
+    //     });
+
+
+
+    const myPromise = new Promise((res, rej) => {
+        let a = 10;
+        let b = 10;
+        if (a == b) {
+          setTimeout(() => {
+            res("sahi hai!");
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            rej("galat hai!");
+          }, 2000);
+        }
+      })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

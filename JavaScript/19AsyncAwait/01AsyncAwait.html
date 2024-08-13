@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+    <p>
+      The async function declaration creates a binding of a new async function
+      to a given name. The await keyword is permitted within the function body,
+      enabling asynchronous, promise-based behavior to be written in a cleaner
+      style and avoiding the need to explicitly configure promise chains.
+    </p>
+    <h2>
+      There’s a special syntax to work with promises in a more comfortable
+      fashion, called “async/await”. It’s surprisingly easy to understand and
+      use.
+    </h2>
+    <h3>Syntax</h3>
+    <p>
+      Let’s start with the async keyword. It can be placed before a function,
+      like this:
+    </p>
+    <pre>
+        async function f() {
+            return 1;
+          }
+    </pre>
+
+    <h3>Syntax</h3>
+    <p>works only inside async functions</p>
+    <pre>
+        let value = await promise;
+    </pre>
+    <h4>
+      The keyword await makes JavaScript wait until that promise settles and
+      returns its result.
+    </h4>
+    <script>
+    //   async function myFunc() {
+    //     let promise = new Promise((resolve, reject) => {
+    //       setTimeout(() => resolve("done!"), 1000);
+    //     });
+
+    //     let result = await promise; // wait until the promise resolves (*)
+
+    //     alert(result); // "done!"
+    //   }
+
+    //   myFunc();
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -32,7 +32,7 @@
     </div>
 
     <script>
-     fetch(`https://data.covid19india.org/data.json${apiKey}`)
+     fetch(`https://data.covid19india.org/data.json`)
         .then((res) => res.json())
         .then((Response) => {
           console.log(Response.cases_time_series);

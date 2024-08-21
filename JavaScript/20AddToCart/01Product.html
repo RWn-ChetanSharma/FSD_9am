@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <!-- CSS  -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <span class="" id="cart-count">0</span>
+    <hr>
+    <div class="card" style="width: 18rem">
+      <img
+        src="https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Men's Shirt</h5>
+        <p class="card-text">Nice shirt</p>
+        <p class="card-text">$25</p>
+        <button
+          class="btn btn-primary"
+          onclick="addToCart('Men\'s Shirt', 'Nice shirt', 25, 'https://images.pexels.com/photos/1342609/pexels-photo-1342609.jpeg')"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem">
+      <img
+        src="https://images.pexels.com/photos/1201613/pexels-photo-1201613.jpeg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Women\'s Dress</h5>
+        <p class="card-text">Elegant dress</p>
+        <p class="card-text">$40</p>
+        <button
+          class="btn btn-primary"
+          onclick="addToCart('Women\'s Dress', 'Elegant dress', 40, 'https://images.pexels.com/photos/1201613/pexels-photo-1201613.jpeg')"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <table id="dispdata" border="1">
+       
+    </table>
+
+    <script>
+      function addToCart(title, description, price, image) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log(cart);
+        cart.push({ title, description, price, image })
+        console.log(cart);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+
+      }
+
+      
+      function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').innerText = cart.length;
+        }
+      localStorage.removeItem("cart")
+
+
+     const car  = [
+        {name: "chetan", age: 28},
+        {name: "Rohan", age : 30},
+       
+      ]
+    //   console.log(car);
+    //   console.log(car[0].name);
+    //   console.log(car[1].name);
+      car.map((e)=>{
+        console.log(e);
+        console.log(e.name);
+
+        document.getElementById("dispdata").innerHTML += `
+         <p>${e.name}${e.age}</p>
+        `
+      })
+
+    </script>
+  </body>
+</html>

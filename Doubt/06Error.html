@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+  </head>
+  <body style="background-color: grey">
+    <h1>Error</h1>
+
+    <script>
+      hey();
+
+      const hey = function  () {
+        a = 10;
+        console.log(a); // 10
+        b = 20;
+        console.log(b); // 20
+
+        var c = a + b;
+        console.log(c); // NAN
+        
+        var a;
+        console.log(a); // undefined
+        var b;
+        console.log(b); // undefined
+
+
+        var c = a + b;
+        console.log(c); // 30
+      }
+    </script>
+  </body>
+</html>

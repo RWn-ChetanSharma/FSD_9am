@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col-50 {
+  width: 50%;
+}
+.col-33 {
+  width: 33.33%;
+}
+.col-25 {
+  width: 25%;
+}
+nav {
+  background-color: black;
+  color: aliceblue;
+  font-size: 30px;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+li {
+  list-style-type: none;
+  padding: 0px 30px;
+}
+#header {
+  background-color: crimson;
+  color: aliceblue;
+}
+img {
+  width: 100%;
+}
+h1 {
+  font-size: 80px;
+}
+h1 + p {
+  font-size: 30px;
+  padding: 25px 0px;
+}
+button {
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: teal;
+  color: khaki;
+  border-radius: 20px;
+  border: 1px solid teal;
+}
+
+/* section */
+
+#section-1 {
+  background-color: brown;
+  color: khaki;
+}
+.section-wrapper {
+  padding: 50px 0px;
+}
+.main-text {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0px;
+}
+h2 {
+  font-size: 40px;
+}
+h2 + p {
+  font-size: 25px;
+  padding: 20px 0px;
+}
+.img-round {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: url(../Images/profile.jpg) no-repeat center center/cover;
+}
+
+h3 {
+  font-size: 30px;
+}
+h3 + p {
+  font-size: 20px;
+  padding: 20px 100px;
+}
+.card {
+  text-align: center;
+}
+
+/* section 2 */
+
+#section-2 {
+  background-color: blue;
+  color: aliceblue;
+}
+
+/* Media  */
+
+@media (max-width: 576px) {
+  .col-25,
+  .col-33,
+  .col-50,
+  .main-text {
+    width: 100%;
+    text-align: center;
+  }
+  .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  #nav {
+    display: none;
+  }
+}

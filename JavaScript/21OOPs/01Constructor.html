@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor</title>
+  </head>
+  <body>
+    <h1>Constructor</h1>
+    <p>
+      A constructor function is a special type of function in programming that
+      is used to create objects. It is typically used in object-oriented
+      programming languages like JavaScript. The purpose of a constructor
+      function is to set the initial values or properties of an object when it
+      is created.
+    </p>
+
+    <script>
+      function BankAccount(customerName, balance = 0) {
+        this.customerName = customerName;
+        this.balance = balance;
+        this.accountNumber = Date.now();
+
+        this.deposit = (amount) => {
+          this.balance += amount;
+        };
+        this.withdraw = (amount) => {
+          this.balance -= amount;
+        };
+      }
+      BankAccount();
+
+      const shivangAccount = new BankAccount("shivang", 5000);
+      const janakAccount = new BankAccount("Janak", 4000);
+
+      console.log(shivangAccount);
+        console.log(janakAccount);
+      //
+    </script>
+  </body>
+</html>

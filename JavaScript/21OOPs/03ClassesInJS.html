@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes In JS</title>
+  </head>
+  <body>
+    <h1>Classes In JS</h1>
+    <p>
+      Classes are a template for creating objects. They encapsulate data with
+      code to work on that data. Classes in JS are built on prototypes but also
+      have some syntax and semantics that are unique to classes.
+    </p>
+
+    <h2>Class and Object</h2>
+    <p>
+      A class describes the contents of the objects that belong to it: it
+      describes an aggregate of data fields (called instance variables), and
+      defines the operations (called methods). object: an object is an element
+      (or instance) of a class; objects have the behaviors of their class.
+    </p>
+
+    <script>
+      class BankAccount {
+        customerName;
+        balance;
+        accountNumber;
+        constructor(customerName, balance = 0) {
+          this.customerName = customerName;
+          this.balance = +balance;
+          this.accountNumber = Date.now();
+        }
+        deposit = (amount) => {
+          this.balance += amount;
+        };
+        withdraw = (amount) => {
+          this.balance -= amount;
+        };
+      }
+      const shivangAccount = new BankAccount("shivang", 5000);
+      const janakAccount = new BankAccount("Janak", 4000);
+
+      console.log(shivangAccount, janakAccount);
+      janakAccount.deposit(500)
+    </script>
+  </body>
+</html>

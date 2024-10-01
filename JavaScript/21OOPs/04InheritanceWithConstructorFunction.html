@@ -15,6 +15,8 @@
     </p>
 
     <script>
+      // BankAccount
+
       function BankAccount(customerName, balance = 0) {
         this.customerName = customerName;
         this.balance = +balance;
@@ -22,40 +24,42 @@
       }
 
       BankAccount.prototype.deposit = function (amount) {
-        this.balance = this.balance + amount;
+        this.balance += amount;
       };
       BankAccount.prototype.withdraw = function (amount) {
-        this.balance = this.balance - amount;
+        this.balance -= amount;
       };
+
+      // Saving Account
 
       function SavingAccount(customerName, balance = 0) {
         BankAccount.call(this, customerName, balance);
         this.transactionLimit = 10000;
       }
       SavingAccount.prototype.takingPersonalLoan = function (amount) {
-       console.log("Personal loan is taken with an amount of", amount);
-       
+        console.log("Personal loan is taken with an amount of", amount);
       };
 
+      // Current Account
 
       function CurrentAccount(customerName, balance = 0) {
         BankAccount.call(this, customerName, balance);
         this.transactionLimit = 50000;
       }
 
-
       CurrentAccount.prototype.takingBusinessLoan = function (amount) {
-       console.log("Business loan is taken with an amount of", amount);
-       
+        console.log("Business loan is taken with an amount of", amount);
       };
+
+      SavingAccount.prototype = Object.create(BankAccount.prototype);
+      CurrentAccount.prototype = Object.create(BankAccount.prototype);
 
       const janakAccount = new SavingAccount("Janak", 5000);
       console.log(janakAccount);
-      janakAccount.takingPersonalLoan(10000)
+      janakAccount.deposit(2000)
 
       const yashAccount = new CurrentAccount("Yash", 4000);
       console.log(yashAccount);
-      yashAccount.takingBusinessLoan(30000)
     </script>
   </body>
 </html>
